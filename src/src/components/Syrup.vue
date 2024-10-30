@@ -29,6 +29,7 @@ const Syrups: Syrup[] = [
 const props = withDefaults(defineProps<Prop>(), {
   name: "Vanilla",
 });
+
 </script>
 <style lang="scss" scoped>
 .syrup {
@@ -38,5 +39,6 @@ const props = withDefaults(defineProps<Prop>(), {
   height: 20%;
   animation: pour-tea 2s 1s forwards;
   z-index: 2;
+  background-color: {{}};
 }
 </style>
