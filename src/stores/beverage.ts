@@ -85,7 +85,10 @@ const syrups: Ref<SyrupType[]> = ref([
 ]);
 
 const currentTemp = ref(temps.value[1]);
+const currentBase = ref<string | null>(null); //This says that the current is either the existing string, or doesn't exist
+const currentCreamer = ref<string | null>(null);
+const currentSyrup = ref<string | null>(null);
 
 export type { BaseBeverageType, CreamerType, SyrupType };
 export { temps, bases, creamers, syrups };
-export { currentTemp };
+export { currentTemp, currentBase, currentCreamer, currentSyrup };
