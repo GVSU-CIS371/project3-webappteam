@@ -1,5 +1,5 @@
 <template>
-  <div class="froth" :style="{ backgroundColor: creamerColor}">
+  <div class="froth" :style="{ backgroundColor: props.color}">
     <div v-for=" in 5" class="foam"></div>
   </div>
 </template>
@@ -8,13 +8,11 @@
 import { defineProps, computed } from 'vue';
 
 const props = defineProps<{
-  creamer: {
-    name: string;
-    color: string;
-  } | null;
+  name: string;
+  color: string;
 }>();
 
-const creamerColor = computed(() => props.creamer?.color);
+//const creamerColor = computed(() => props.creamer?.color);
 </script>
 
 <style lang="scss" scoped>

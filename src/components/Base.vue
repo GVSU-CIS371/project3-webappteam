@@ -1,22 +1,26 @@
 <template>
   <div 
-  class="baseBeverage" :style="{backgroundColor: baseColor}"
+  class="baseBeverage" :style="{backgroundColor: props.color}"
   >
+  <!-- <div 
+  class="baseBeverage" :style="{backgroundColor: bases.find((b)=>b.id==currentBase)?.color ||  "red"}"
+  > -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, defineProps} from 'vue';
 
-const props = defineProps<{
-  base: {
+//import { bases,currentBase } from "../stores/beverage.ts";
+
+const props = defineProps<{  
     name: string;
-    color: string;
-  }
+    color: string;  
 }>();
 
-const baseColor = computed(() => props.base.color);
+// const baseColor = computed(() => "red");
 </script>
+
 <style scoped>
 .baseBeverage {
   position: relative;

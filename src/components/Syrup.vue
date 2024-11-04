@@ -1,18 +1,16 @@
 <template>
-  <div class="syrup" :style="{ backgroundColor: syrupColor}"></div>
+  <div class="syrup" :style="{ backgroundColor: props.color}"></div>
 </template>
 
 <script setup lang="ts">
 import { defineProps, computed } from 'vue';
 
 const props = defineProps<{
-  syrup: {
-    name: string;
-    color: string;
-  } | null;
+  name: string;
+  color: string;
 }>();
 
-const syrupColor = computed(() => props.syrup?.color);
+//const syrupColor = computed(() => props.syrup?.color);
 </script>
 <style lang="scss" scoped>
 .syrup {
