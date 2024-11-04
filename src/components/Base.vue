@@ -15,7 +15,8 @@ import { computed, defineProps} from 'vue';
 
 const props = defineProps<{  
     name: string;
-    color: string;  
+    color: string;
+    id: string;
 }>();
 
 // const baseColor = computed(() => "red");

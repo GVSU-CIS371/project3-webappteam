@@ -4,17 +4,17 @@
     <Hot v-else />
     <Contents>
       <template v-slot:top>
-        <Creamer :name="creamer?.name!" :color="creamer?.color!"/>
+        <Creamer :name="creamer?.name!" :color="creamer?.color!" :id="creamer?.id!"/>
         <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
       <template v-slot:mid>
-        <Syrup :name="syrup?.name!" :color="syrup?.color!"/>
+        <Syrup :name="syrup?.name!" :color="syrup?.color!" :id="syrup?.id!"/>
         <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
       <template v-slot:bottom>
-        <Base :name="base?.name!" :color="base?.color!" />
+        <Base :name="base?.name!" :color="base?.color!" :id="base?.id!"/>
         <!-- adding the ! at the ends forces not null -->
       </template>
     </Contents>
@@ -31,9 +31,9 @@ import Cold from "./Cold.vue";
 
 type Props = {
   isIced: boolean;
-  base: { name: string; color: string } | null;
-  creamer: { name: string; color: string } | null;
-  syrup: { name: string; color: string } | null;
+  base: { name: string; color: string; id: string} | null;
+  creamer: { name: string; color: string; id: string} | null;
+  syrup: { name: string; color: string; id: string} | null;
 };
 defineProps<Props>();
 </script>

@@ -10,6 +10,7 @@ import { defineProps, computed } from 'vue';
 const props = defineProps<{
   name: string;
   color: string;
+  id: string;
 }>();
 
 //const creamerColor = computed(() => props.creamer?.color);
