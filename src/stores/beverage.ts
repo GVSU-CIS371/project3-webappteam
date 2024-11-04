@@ -65,7 +65,7 @@ const syrups: Ref<SyrupType[]> = ref([
   {
     id: "s1",
     name: "No Syrup",
-    color: "#c6c6c6",
+    color: "#c6c6c6",//I feel like this should be transparent, but I think we change it in part 3 anyway
   },
   {
     id: "s2",
@@ -85,9 +85,9 @@ const syrups: Ref<SyrupType[]> = ref([
 ]);
 
 const currentTemp = ref(temps.value[1]);
-const currentBase = ref<string>("b1"); //This says that the current is either the existing string, or doesn't exist
-const currentCreamer = ref<string | null>("c1");
-const currentSyrup = ref<string | null>("s1");
+const currentBase = ref<string>("b1"); //This says that the current is either the existing string, or is set to Black Tea by default
+const currentCreamer = ref<string | null>("c1");//This says that the current is either the existing string, or No Creamer
+const currentSyrup = ref<string | null>("s1");//This says that the current is either the existing string, or No Syrup
 
 export type { BaseBeverageType, CreamerType, SyrupType };
 export { temps, bases, creamers, syrups };

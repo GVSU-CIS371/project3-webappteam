@@ -5,10 +5,12 @@
     <Contents>
       <template v-slot:top>
         <Creamer :name="creamer?.name!" :color="creamer?.color!"/>
+        <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
       <template v-slot:mid>
         <Syrup :name="syrup?.name!" :color="syrup?.color!"/>
+        <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
       <template v-slot:bottom>
