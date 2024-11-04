@@ -1,9 +1,22 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div 
+  class="baseBeverage" :style="{backgroundColor: baseColor}"
+  >
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed, defineProps} from 'vue';
 
+const props = defineProps<{
+  base: {
+    name: string;
+    color: string;
+  }
+}>();
+
+const baseColor = computed(() => props.base.color);
+</script>
 <style scoped>
 .baseBeverage {
   position: relative;

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Beverage :isIced="currentTemp === 'Cold'" />
+    <Beverage 
+    :isIced="currentTemp === 'Cold'" 
+    :base="bases.find(base => base.id === currentBase)"
+    :creamer="creamers.find(creamer => creamer.id === currentCreamer)"
+    :syrup="syrups.find(syrup => syrup.id === currentSyrup)"
+     />
     <ul>
       <li>
         <template v-for="temp in temps" :key="temp">

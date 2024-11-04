@@ -1,10 +1,22 @@
 <template>
-  <div class="froth">
+  <div class="froth" :style="{ backgroundColor: creamerColor}">
     <div v-for=" in 5" class="foam"></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineProps, computed } from 'vue';
+
+const props = defineProps<{
+  creamer: {
+    name: string;
+    color: string;
+  } | null;
+}>();
+
+const creamerColor = computed(() => props.creamer?.color);
+</script>
+
 <style lang="scss" scoped>
 .froth {
   overflow: visible;
