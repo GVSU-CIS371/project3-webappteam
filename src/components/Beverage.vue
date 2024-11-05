@@ -4,12 +4,15 @@
     <Hot v-else />
     <Contents>
       <template v-slot:top>
-        <Creamer :name="creamer?.name!" :color="creamer?.color!" :id="creamer?.id!"/>
+        <Base v-if="syrup?.id! === 's1' && creamer?.id! === 'c1'" :name="base?.name!" :color="base?.color!" :id="base?.id!"/>
+        <Syrup v-else-if="creamer?.id! ==='c1' && syrup?.id! != 's1'" :name="syrup?.name!" :color="syrup?.color!" :id="syrup?.id!" />
+        <Creamer v-else :name="creamer?.name!" :color="creamer?.color!" :id="creamer?.id!"/>
         <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
       <template v-slot:mid>
-        <Syrup :name="syrup?.name!" :color="syrup?.color!" :id="syrup?.id!"/>
+        <Base v-if="syrup?.id! === 's1'" :name="base?.name!" :color="base?.color!" :id="base?.id!"/>
+        <Syrup v-else :name="syrup?.name!" :color="syrup?.color!" :id="syrup?.id!" />
         <!-- I think we can throw a v-if here to check and set the color-->
         <!-- adding the ! at the ends forces not null -->
       </template>
